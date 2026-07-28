@@ -1,3 +1,5 @@
+import { log } from "node:console"
+
 /**
  * SMK Telkom Malang calculates each student's final score using several assessment components. 
  * Before calculating the final grade, the system stores every assessment score as a separate variable. 
@@ -14,3 +16,30 @@
  * 3. Create the variable declarations using TypeScript.
  * 4. Display the student data using console.log.
  */
+const name: string = `Nadia Putri`
+const studentId: string = `ST2026045`
+
+type StudentScore = {
+    assignment: number
+    midTerm: number
+    final: number
+    attendance: number
+}
+
+const nadiaScore: StudentScore = {
+    assignment: 90,
+    midTerm: 100,
+    final: 90.5,
+    attendance: 100
+}
+
+const extracurricularActivity: string = "Scout"
+
+console.log(`Name: ${name}`)
+console.log(`ID: ${studentId}`)
+console.log("Extracurricular Activity" + extracurricularActivity)
+console.log("Assignment Score: " + nadiaScore.assignment)
+console.log(`Midterm Score: ${nadiaScore.midTerm}`)
+console.log(`Final Score: ${nadiaScore.final}`)
+console.log(`Attendance Score: ${nadiaScore.attendance}`)
+

@@ -21,3 +21,23 @@
  * 2. Store the temperature data in a single collection.
  * 3. Display the temperature data using console.log.
  */
+
+type TimeandTemp = {
+    Time: string
+    Temperature: number
+}
+
+const Date08092015 : TimeandTemp[] = [
+    { Time: `08:00`, Temperature: 24.5},
+    { Time: `09:00`, Temperature: 25.1},
+    { Time: `10:00`, Temperature: 26.8},
+    { Time: `11:00`, Temperature: 28.4},
+    { Time: `12:00`, Temperature: 30.2},
+    { Time: `13:00`, Temperature: 31.1},
+    { Time: `14:00`, Temperature: 30.7},
+    { Time: `15:00`, Temperature: 29.3}
+]
+
+Date08092015.forEach(row => {
+  console.log(`Time: ${row.Time} | Temperature: ${row.Temperature}°C`);
+});

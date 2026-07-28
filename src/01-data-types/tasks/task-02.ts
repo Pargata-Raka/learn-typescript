@@ -14,3 +14,46 @@
  * 4. Declare all variables in TypeScript.
  * 5. Display the product data using console.log.
  */
+
+type product = {
+    Code: string
+    Name: string
+    Price: number
+    Stock: number
+    DiscountPercent: number
+    Flashsale: boolean
+}
+
+const RGBKeyboard: product = {
+    Code: "KBR-001",
+    Name: "Mechanical Keyboard RGB",
+    Price: 850000,
+    Stock: 18,
+    DiscountPercent: 25,
+    Flashsale: true
+}
+
+type Order = {
+    Amount: number
+    PremiumAcc: boolean
+    ShippingCost: number
+}
+
+const Gamer: Order = {
+    Amount: 2,
+    PremiumAcc: true,
+    ShippingCost: 0
+}
+
+console.log("== Product ==")
+console.log(`Name: ${RGBKeyboard.Name}`)
+console.log(`ID: ${RGBKeyboard.Code}`)
+console.log(`Price: ${RGBKeyboard.Price}` + " IDR")
+console.log(`Is it on Flash Sale? ${RGBKeyboard.Flashsale}`)
+console.log(`Discount: ${RGBKeyboard.DiscountPercent}` + "%")
+console.log(`Current stock available: ${RGBKeyboard.Stock}`)
+
+console.log("== Order ==")
+console.log(`Quantity: ${Gamer.Amount}`)
+console.log(`Is a premium user? ${Gamer.PremiumAcc}`)
+console.log(`Shipping Cost: ${Gamer.ShippingCost}` + " IDR")

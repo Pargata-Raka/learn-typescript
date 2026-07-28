@@ -16,3 +16,27 @@
  * 2. Store the product data in a single collection.
  * 3. Display the product data using console.log.
  */
+
+type Product = {
+    Code: string
+    Name: string
+    Price: number
+    Quantity: number
+    HasFreeShipping: boolean
+}
+
+const BackendDev : Product[] = [
+    { Code: `KB001`, Name: `Mechanical Keyboard`, Price: 850000, Quantity: 1, HasFreeShipping: true},
+    { Code: `MS002`, Name: `Wireless Mouse`, Price: 275000, Quantity: 2, HasFreeShipping: true},
+    { Code: `KB001`, Name: `External SSD 1TB`, Price: 1650000, Quantity: 1, HasFreeShipping: false},
+    { Code: `KB001`, Name: `Gaming Headset`, Price: 720000, Quantity: 1, HasFreeShipping: true},
+]
+
+BackendDev.forEach(row => {
+    console.log(`Product Code: ${row.Code} 
+    | Name: ${row.Name}
+    | Price: ${row.Price}
+    | Available amount: ${row.Quantity} 
+    | Free Shipping available? ${row.HasFreeShipping}
+    `);
+});

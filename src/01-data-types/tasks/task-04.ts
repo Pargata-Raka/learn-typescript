@@ -10,3 +10,22 @@
  * 
  * display the book data using console.log.
  */
+
+type books = {
+    ISBN: string
+    Title: string
+    Author: string
+    Pages: number
+    Category: String
+    IsAvailable: Boolean
+}
+
+const Batch67 : books[] = [
+    { ISBN: `0897`, Title: `1984`, Author: `George Orwell`, Pages: 250, Category: `Fiction`, IsAvailable: true},
+    { ISBN: `0067`, Title: `How to Full Stack`, Author: `Fullios Stackos`, Pages: 80, Category: `Education`, IsAvailable: false},
+    { ISBN: `1111`, Title: `Kisah dan Hadits Nabi Muhammad SAW`, Author: `Ahmad Katib`, Pages: 111, Category: `Religion`, IsAvailable: true}
+]
+
+Batch67.forEach(row => {
+  console.log(`ISBN: ${row.ISBN} | Title: ${row.Title}| Author: ${row.Author}| Pages: ${row.Pages} | Category: ${row.Category}| Is Availible Now: ${row.IsAvailable}`);
+});

@@ -9,3 +9,21 @@
  * 
  * display the student data using console.log.
  */
+
+type StudentInfo = {
+    ID: String
+    Name: String
+    Age: Number
+    ActiveStudent: Boolean
+}
+
+const XIICP : StudentInfo[] = [
+    {ID: "A10001", Name: "Jeffrey Epstein", Age: 16, ActiveStudent: true},
+    {ID: "A10002", Name: "Ladis Wusrum", Age: 17, ActiveStudent: false},
+    {ID: "A10003", Name: "Fullios Stackos", Age: 16, ActiveStudent: true}
+]
+
+console.log("== Student Info ==");
+XIICP.forEach(row => {
+  console.log(`ID: ${row.ID} | Name: ${row.Name}| Age: ${row.Age}| Is Active: ${row.ActiveStudent}`);
+});
