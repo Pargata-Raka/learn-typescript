@@ -20,3 +20,24 @@
  * will be display "Congratulations! You are eligible to graduate.", 
  * otherwise display "You are not eligible to graduate."
  */
+
+type Student = {
+    Name: string,
+    FinalScore: number,
+    Attendance: number,
+    TuitionPaid: boolean;
+}
+
+const Alya : Student = {
+    Name: "Alya Putri",
+    FinalScore: 82,
+    Attendance: 94,
+    TuitionPaid: true
+}
+
+if (Alya.FinalScore >= 75 && Alya.Attendance >= 90 && Alya.TuitionPaid == true) {
+    console.log("Congratulations! You are eligible to graduate.");
+}
+else {
+    console.log("You are not eligible to graduate.")
+}
