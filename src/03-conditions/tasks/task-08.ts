@@ -27,3 +27,32 @@
  * 2. Implement the airline decision process.
  * 3. Display the correct message.
  */
+
+type passanger = {
+    name: string,
+    onlinecheck: boolean,
+    class: string,
+    BweightKG: 24
+}
+
+const Fajar:passanger = {
+    name: "Fajar Nugroho",
+    onlinecheck: true,
+    class: "Economy",
+    BweightKG: 24
+}
+
+if (Fajar.onlinecheck == true) {
+    if (Fajar.BweightKG > 20) {
+        if (Fajar.class == "Business"){
+            console.log("Extra baggage allowed");
+        }
+        else {
+            console.log("Additional baggage fee required")
+        }
+    }
+    else {}
+}
+else {
+    console.log("Please complete online check-in first.");
+}

@@ -30,3 +30,35 @@
  * 2. Implement both screening stages.
  * 3. Display the loan decision.
  */
+
+const debtcond = 30/100;
+
+type banking = {
+    applicant : string,
+    monthlyincome: number,
+    creditscore: number,
+    existingdebt: number,
+    permemployee: boolean
+}
+
+const today:banking = {
+    applicant: "Andi Wijaya",
+    monthlyincome: 10000000,
+    creditscore: 725,
+    existingdebt: 2500000,
+    permemployee: true
+}
+
+console.log("Applicant Name:", today.applicant);
+
+if (today.monthlyincome >= 8000000 && today.creditscore >= 700) {
+    if (today.existingdebt < today.monthlyincome * debtcond && today.permemployee == true) {
+        console.log("Loan approved.");
+    }
+    else {
+        console.log("Manual review required.");
+    }
+}
+else {
+    console.log("Loan rejected.");
+}

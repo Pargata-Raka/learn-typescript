@@ -32,3 +32,33 @@
  *  - Implement the second screening only if the first screening is passed.
  *  - Display the correct result.
  */
+
+type scholarshipcandidate = {
+    name: string,
+    GPA: number,
+    Income: number,
+    compcount: number,
+    hasdiscrec: boolean,
+    doccomplete: boolean
+}
+
+const Fajar : scholarshipcandidate = {
+    name: "Fajar Hidayat",
+    GPA: 3.86,
+    Income:4200000,
+    compcount: 4,
+    hasdiscrec: false,
+    doccomplete: true
+}
+
+if (Fajar.GPA > 3.75 && Fajar.Income < 5000000) {
+    if (Fajar.compcount > 3 && Fajar.hasdiscrec == false && Fajar.doccomplete == true) {
+        console.log("Scholarship approved!");
+    }
+    else {
+        console.log(" assed First Screening, but Failed Second Screening");
+    }
+}
+else {
+    console.log("You are not eligible for the scholarship program.");
+}
