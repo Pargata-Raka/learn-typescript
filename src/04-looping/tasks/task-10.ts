@@ -49,8 +49,8 @@ for (const key of submissions) {
         revise++
         remedy.push(key.student)
     }
-    const avgscore = totalscore / submissions.length;
 }
+const avgscore = totalscore / submissions.length;
 
 console.log("Submitted:", submitted);
 console.log("Did not Submit:", didntsubmit);
@@ -58,3 +58,4 @@ console.log("Passed:", passed);
 console.log("Revision needed:", revise);
 console.log("Students that didn't submit:", naughtylist.join(", "));
 console.log("Students that must revise:", remedy.join(", "));
+console.log("Task Average:", avgscore);
