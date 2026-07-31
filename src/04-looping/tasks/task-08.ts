@@ -1,3 +1,5 @@
+import { read } from "node:fs";
+
 /**
  * The warehouse checks customer orders before shipping based on array below.
  * 
@@ -21,3 +23,28 @@ const orders = [
   { id: "ORD005", paid: false, stockAvailable: false },
   { id: "ORD006", paid: true, stockAvailable: true }
 ];
+
+let ready = 0;
+let unpaid = 0;
+let restocking = 0;
+const readyID: string[] = [];
+
+for (const key of orders) {
+  if (key.paid && key.stockAvailable) {
+    ready++;
+    readyID.push(key.id)
+  } 
+  if (!key.paid) {
+    unpaid++;
+  }
+  if(!key.stockAvailable) {
+    restocking++
+  }
+}
+
+console.log("Ready to ship:", ready);
+console.log("Unpaid orders:", unpaid);
+console.log("Awaiting Restocks:", restocking);
+console.log("Shipped items ID:", readyID.join(", "));
+
+

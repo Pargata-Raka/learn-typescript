@@ -25,3 +25,36 @@ const submissions = [
     { student: "Gita", submitted: true, score: 90 },
     { student: "Hana", submitted: true, score: 73 }
 ];
+
+let submitted = 0;
+let didntsubmit = 0;
+let passed = 0;
+let revise= 0;
+let totalscore= 0;
+const naughtylist: string[] = [];
+const remedy: string[] = [];
+
+for (const key of submissions) {
+    totalscore += key.score
+
+    if (key.submitted == true) {
+        submitted++
+    } else {
+        didntsubmit++
+        naughtylist.push(key.student)
+    }
+    if (key.score >= 75) {
+        passed++
+    } else {
+        revise++
+        remedy.push(key.student)
+    }
+    const avgscore = totalscore / submissions.length;
+}
+
+console.log("Submitted:", submitted);
+console.log("Did not Submit:", didntsubmit);
+console.log("Passed:", passed);
+console.log("Revision needed:", revise);
+console.log("Students that didn't submit:", naughtylist.join(", "));
+console.log("Students that must revise:", remedy.join(", "));
