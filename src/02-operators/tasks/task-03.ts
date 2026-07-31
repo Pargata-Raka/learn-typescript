@@ -17,3 +17,30 @@
  * - Bonus
  * - Final salary
  */
+
+const OvtRate : number = 50000
+const OvtBonus: number = 300000
+
+type Employee = {
+    Name: string,
+    BaseSalary: number,
+    OvtHours: number,
+}
+
+
+const Dimas:Employee = {
+    Name: "Dimas",
+    BaseSalary: 5000000,
+    OvtHours: 12,
+}
+
+let OvtPay: number = OvtRate * Dimas.OvtHours
+
+console.log("== Employee Data ==");
+console.log(`Employee Name: `, Dimas.Name);
+console.log(`Base Salary: `, Dimas.BaseSalary);
+console.log("===  Overtime  ===");
+console.log(`Hours: `, Dimas.OvtHours);
+console.log(`Pay: `, OvtPay);
+console.log(`Bonus (10 Hours): `, OvtBonus);
+console.log(`Final Pay: `, OvtPay+OvtBonus)

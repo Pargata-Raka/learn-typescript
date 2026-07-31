@@ -21,3 +21,31 @@
  * - Final payment
  * - Whether the guest is eligible for free breakfast
  */
+
+const tax:number =  11/100
+const VIPdisc:number =  12/100
+
+type Hotel = {
+    PPNight: number
+    Nights: number
+    ServCharge: number
+    VIPStatus: boolean
+}
+
+const Jeffrey: Hotel = {
+    PPNight: 650000,
+    Nights: 4,
+    ServCharge: 120000,
+    VIPStatus: true
+}
+
+const subtotal:number = Jeffrey.PPNight * Jeffrey.Nights
+const VIPcut:number = subtotal * VIPdisc
+const Taxcut:number = subtotal * tax
+const FinalPay:number = subtotal + Jeffrey.ServCharge - VIPdisc + Taxcut
+
+console.log("Subtotal:", subtotal);
+console.log("Discount:", VIPcut);
+console.log("Tax Cut:", Taxcut);
+console.log("Final Pay:", FinalPay);
+console.log("Breakfast Eligible:", Jeffrey.Nights >= 3 || Jeffrey.VIPStatus ? "Eligible" : "Not Eligible");

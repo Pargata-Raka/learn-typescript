@@ -33,3 +33,39 @@
  * - Calculate the remaining scholarship budget.
  * - Display whether the student is accepted.
  */
+
+const UniBudget = 500000000;
+
+type Purchase = {
+    Name: string
+    GPA: number
+    FamIncome: number
+    CompCount: number
+    HasDiscRec: Boolean
+    DocComplete: Boolean
+}
+
+const Alya : Purchase = {
+    Name: "Alya Putri",
+    GPA: 3.89,
+    FamIncome: 4200000,
+    CompCount: 4,
+    HasDiscRec: false,
+    DocComplete: true
+}
+
+const isEligible = Alya.GPA >= 3.75 
+&& Alya.FamIncome < 50000 
+&& Alya.CompCount >= 3
+&& Alya.HasDiscRec == false
+&& Alya.DocComplete == true ? "Eligible" : "Not Eligible";
+
+const Scholarship = isEligible == "Eligible" ? 12000000 : 0;
+const CurrentBudget = UniBudget - Scholarship
+
+console.log("Name: ", Alya.Name);
+console.log("Eligibility Status:");
+console.log(isEligible);
+console.log("Scholarship Amount:", Scholarship);
+console.log("Current Scholarship Budget:", CurrentBudget);
+

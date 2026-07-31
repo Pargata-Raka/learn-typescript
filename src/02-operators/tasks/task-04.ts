@@ -22,3 +22,28 @@
  *  - Calculate the final payment.
 
  */
+
+type Purchase = {
+    Product: string
+    Price: number
+    Quantity: number
+}
+
+const Customer67 : Purchase[] = [
+    {Product:"Mechanical Keyboard", Price: 85000, Quantity:1},
+    {Product:"Wireless Mouse", Price: 275000, Quantity:2},
+    {Product:"Mouse Pad", Price: 120000, Quantity:1}
+]
+
+const subtotal = Customer67.reduce((total, item) => total + (item.Price * item.Quantity), 0);
+const totalQuantity = Customer67.reduce((sum, item) => sum + item.Quantity, 0);
+const disccriteria = subtotal > 1000000 ? "Eligible" : "Not Eligible";
+
+console.log("== Receipt ==");
+console.log("Subtotal: ", subtotal);
+console.log("Purchased items:", totalQuantity);
+console.log("Discount Eligible?", disccriteria);
+console.log("Final Price:", disccriteria == "Eligible" ? subtotal - (subtotal * (10/100)) : subtotal);
+
+
+

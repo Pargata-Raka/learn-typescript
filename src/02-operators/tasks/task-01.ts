@@ -14,3 +14,16 @@
  *  - Final payment
  * 2. Display the calculation results.
  */
+
+const FRice: number = 3 * 18000
+const MWater: number = 2 * 5000
+const TotalAmount: number = FRice + MWater
+const AfterDisc: number = TotalAmount - 10000
+
+console.log("== Your Receipt ==")
+console.log(`Fried Rice: ${FRice}`)
+console.log(`Mineral Water: ${MWater}`)
+
+console.log("== Payment ==")
+console.log(`Grand Total: ${TotalAmount}`)
+console.log(`Discounted Total: ${AfterDisc}`)

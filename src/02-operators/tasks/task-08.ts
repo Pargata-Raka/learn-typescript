@@ -24,3 +24,33 @@
  * - Final bill
  * - Green Energy Program eligibility
  */
+
+const PricePerKwh: number = 1650;
+const SolarDisc: number = 15/100;
+const ESdisc: number = 5/100;
+
+type EnergyUse = {
+    PrevMeter: number
+    CurrentMeter: number
+    Solarinstalled: boolean
+    EnergySavemode: boolean
+}
+
+const Benjamin: EnergyUse = {
+    PrevMeter: 25640,
+    CurrentMeter: 25892,
+    Solarinstalled: true,
+    EnergySavemode: false
+}
+
+const EnergyConsume: number = Benjamin.CurrentMeter - Benjamin.PrevMeter;
+const AfterSolar = Benjamin.Solarinstalled == true ? (EnergyConsume - (EnergyConsume * SolarDisc)) * PricePerKwh : EnergyConsume *PricePerKwh ;
+const AfterESmode = Benjamin.EnergySavemode == true ? (AfterSolar - (AfterSolar * ESdisc)) * PricePerKwh : AfterSolar * PricePerKwh;
+
+console.log("=== Something Something Electricity ===");
+console.log("Total Energy Consumption:", EnergyConsume);
+console.log("Final Bill:", AfterESmode);
+console.log("GEP Eligibility:", Benjamin.Solarinstalled == true && Benjamin.EnergySavemode == true && EnergyConsume < 300 ?
+    "Eligible" : "Not Eligible"
+);
+
