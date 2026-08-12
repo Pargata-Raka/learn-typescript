@@ -12,16 +12,6 @@
  * Create the following functions:
  */
 
-const transtoday = [
-    500001,
-    250000,
-    375000,
-    600000,
-    200000,
-    320000,
-    670000
-]
-
 function calculateTotalSales(sales: number[]): number {
     let total = 0;
     for (const key of sales) {
