@@ -19,8 +19,16 @@ function showRegistrationMessage(name: string): void {
     console.log(`${name} successfully registered.`);
 }
 
+function Greetingstudent(name: string): void {
+    console.log(`Greetings, ${name}.`);
+}
+
+
 /** show registration message */
-registerStudent(`John Cena`, showRegistrationMessage)
+registerStudent(`John Cena`, (name) => {
+    showRegistrationMessage(name);
+    Greetingstudent(name);
+});
 
 /** 
  * TASK:

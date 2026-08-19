@@ -29,18 +29,41 @@ function processScores(
     scores: number[],
     callback: (score: number) => void
 ): void {
-    // implementation
+    for (const score of scores) {
+    callback(score);
+  }
 }
 
 function printScore(score: number) {
-    // implementation
+    console.log(`Score: ${score}`);
+}
+
+function checkPassing(score: number): void {
+  if (score >= 70) {
+    console.log(`${score} → PASS`);
+  } else {
+    console.log(`${score} → FAIL`);
+  }
 }
 
 function showGrade(score: number) {
-    // implementation
+    if (score >= 90) {
+    console.log(`${score} → A`);
+  } else if (score >= 80) {
+    console.log(`${score} → B`);
+  }
+  else if (score >= 70) {
+    console.log(`${score} → C`);
+  }
+  else {
+    console.log(`${score} → D`);
+  }
 }
 
 
 // implementation of callback function
 processScores(scores, printScore)
+console.log(`--------------------`);
+processScores(scores, checkPassing)
+console.log(`--------------------`);
 processScores(scores, showGrade)

@@ -12,6 +12,19 @@
  * Create the following functions:
  */
 
+const sales = [
+  125000,
+  780000,
+  250000,
+  99000,
+  540000,
+  670000,
+  180000,
+  450000,
+  310000,
+  820000
+];
+
 function calculateTotalSales(sales: number[]): number {
     let total = 0;
     for (const key of sales) {
@@ -59,8 +72,8 @@ function countLargeTransactions(sales: number[], minimumAmount: number): number 
     return largetransaction
 }
 
-console.log("Total Sales:", calculateTotalSales(transtoday));
-console.log("Highest Transaction:", findHighestTransaction(transtoday));
-console.log("Lowest Transaction:", findLowestTransaction(transtoday));
-console.log("Today's Average:", calculateAverageSale(transtoday));
-console.log("Large Transactions:", countLargeTransactions(transtoday, 500000), "Out of", transtoday.length);
+console.log("Total Sales:", calculateTotalSales(sales));
+console.log("Highest Transaction:", findHighestTransaction(sales));
+console.log("Lowest Transaction:", findLowestTransaction(sales));
+console.log("Today's Average:", calculateAverageSale(sales));
+console.log("Large Transactions:", countLargeTransactions(sales, 500000), "Out of", sales.length);

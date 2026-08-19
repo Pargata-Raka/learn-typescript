@@ -4,6 +4,8 @@
  * 
  */
 
+import { table } from "node:console"
+
 type Person = {
     name: string
     height: number
@@ -37,8 +39,8 @@ function determineBMI(selectedPerson: Person): BMI_RESULT {
 
 function processBMI<T>(
     arr: Person[],
-    callback: (person: Person) => T
-): T[] {
+    callback: (person: Person) => T): T[] 
+    {
     const results: T[] = []
     for (let index = 0; index < arr.length; index++) {
         const result = callback(arr[index])
