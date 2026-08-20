@@ -53,7 +53,7 @@ function showGrade(score: number) {
 }
 
 function Bonused(score:number) {
-  let bonuspoint = score
+  let bonuspoint = score + 5
   if (bonuspoint > 90) {
     console.log(`${score} -> ${bonuspoint} EXCELLENT!`);    
   }

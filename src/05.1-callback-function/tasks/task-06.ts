@@ -76,8 +76,7 @@ function getPerformanceStatus(selectedEmployee: Employee): EMPLOYEE_PERFORMANCE 
 
 function employeeProcess<T>(
     arr: Employee[],
-    callback: (employee: Employee) => T
-): T[] {
+    callback: (employee: Employee) => T): T[] {
     return arr.map(callback);
 }
 
@@ -87,7 +86,7 @@ const employeeWithPerformanceStatus = employeeProcess(employees, getPerformanceS
 
 
 console.log(`====== EMPLOYEES WITH FINAL SALARY + BONUS ======`);
-console.table( employeeWithFinalSalary)
+console.table(employeeWithFinalSalary)
 console.log(`====== EMPLOYEES WITH PERFORMANCE STATUS ======`);
 console.table(employeeWithPerformanceStatus)
 
